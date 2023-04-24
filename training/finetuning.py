@@ -33,9 +33,6 @@ from safetensors.torch import save_file
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--user_id", type=str)
-    parser.add_argument("--model_id", type=str)
-    parser.add_argument("--topic_id", type=str)
     parser.add_argument("--pretrained_model_name_or_path", type=str, default=None)
     parser.add_argument("--revision", type=str, default=None)
     parser.add_argument("--instance_data_dir",type=str,default=None)
@@ -534,9 +531,6 @@ if __name__ == "__main__":
         json.dump(concept_list_json, f)
     modifier_token = [c["identifier"] for c in concept_list_json]
 
-    args.user_id = 1
-    args.model_id = "cool"
-    args.topic_id = "nice"
     args.pretrained_model_name_or_path = "runwayml/stable-diffusion-v1-5"
     args.concepts_list = "concept_list.json"
     args.prior_loss_weight = 1.0
